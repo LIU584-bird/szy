@@ -1,1 +1,60 @@
-@index.html
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <meta name="theme-color" content="#fff5f7">
+  <meta name="format-detection" content="telephone=no">
+  <title>送你一封信</title>
+  <link rel="stylesheet" href="love.css">
+</head>
+<body>
+  <main id="app">
+    <section class="cover" id="cover" aria-label="打开礼物">
+      <div class="cover-glow"></div>
+      <div class="envelope" aria-hidden="true"><span class="envelope-heart">♥</span></div>
+      <p class="eyebrow">A LETTER FOR YOU</p>
+      <h1 id="coverTitle">有一封信，想亲手交给你</h1>
+      <p class="cover-copy" id="coverHint">请戴上耳机，慢慢打开</p>
+      <button class="open-button" id="openButton" type="button">点击开启</button>
+      <p class="sound-tip">♫ 点击后将尝试播放背景音乐</p>
+    </section>
+
+    <section class="story" id="story" aria-hidden="true">
+      <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+      <button class="music-button" id="musicButton" type="button" aria-label="播放或暂停音乐">♫</button>
+      <section class="hero scene">
+        <div class="floating-hearts" aria-hidden="true"></div>
+        <p class="eyebrow light">TO <span data-recipient></span></p>
+        <h2 id="heroTitle"></h2>
+        <p class="hero-copy" id="heroSubtitle"></p>
+        <span class="scroll-tip">向上滑动 · 慢慢看</span>
+      </section>
+      <section class="letter scene reveal">
+        <p class="section-label">想对你说</p>
+        <div class="letter-card">
+          <p class="dear">亲爱的 <span data-recipient></span>：</p>
+          <div id="letterContent"></div>
+          <p class="signature">爱你的<br><strong data-sender></strong></p>
+        </div>
+      </section>
+      <section class="memories scene">
+        <p class="section-label reveal">我们的片刻</p>
+        <h2 class="section-title reveal">每一张照片，都藏着一句喜欢</h2>
+        <div class="photo-list" id="photoList"></div>
+      </section>
+      <section class="promise scene reveal">
+        <span class="promise-heart" aria-hidden="true">♥</span>
+        <p class="section-label">最后一句</p>
+        <h2 id="finalTitle"></h2>
+        <p id="finalMessage"></p>
+        <p class="forever"><span data-sender></span> · <span id="today"></span></p>
+        <button class="replay-button" id="replayButton" type="button">再看一次</button>
+      </section>
+    </section>
+  </main>
+  <audio id="backgroundMusic" loop preload="auto"></audio>
+  <script src="love-config.js"></script>
+  <script src="love.js"></script>
+</body>
+</html>
